@@ -10,6 +10,13 @@ class ShowUserProfileUseCase {
 
   execute({ user_id }: IRequest): User {
     // Complete aqui
+    const user = this.usersRepository.findById(user_id);
+
+    if (!user) {
+      throw new Error("Usuário que solicitou não existe.");
+    }
+
+    return user;
   }
 }
 
