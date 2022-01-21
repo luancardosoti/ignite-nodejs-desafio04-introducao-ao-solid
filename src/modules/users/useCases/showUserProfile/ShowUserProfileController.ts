@@ -10,7 +10,7 @@ class ShowUserProfileController {
       const { user_id } = request.params;
 
       if (!user_id) {
-        throw new Error("Usuário que solicitou não existe.");
+        throw new Error("User not found.");
       }
 
       const user = this.showUserProfileUseCase.execute({ user_id });
